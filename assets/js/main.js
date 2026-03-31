@@ -47,8 +47,22 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
-// const numberOfParticles = 120;
-const numberOfParticles = 300; // Increase or decrease for more/fewer stars
+
+let numberOfParticles;
+
+// Determine how many stars to draw based on screen width
+function setParticleCount() {
+    if (window.innerWidth < 768) {
+        numberOfParticles = 40;  // Mobile: fewer stars
+    } else if (window.innerWidth < 1024) {
+        numberOfParticles = 80;  // Tablets: medium amount
+    } else {
+        numberOfParticles = 120; // Desktop: full amount
+    }
+}
+
+// Call it once to set the initial number
+setParticleCount();
 
 // Track mouse position
 const mouse = { x: null, y: null };
@@ -95,6 +109,18 @@ function init() {
         particlesArray.push(new Particle());
     }
 }
+
+// Handle window resizing and phone rotation
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // Recalculate how many stars we need
+    setParticleCount();
+    
+    // Restart the animation with the new star count
+    init();
+});
 
 // Animation Loop
 function animate() {
