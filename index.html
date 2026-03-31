@@ -4,56 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhilasha Manna | Portfolio</title>
+    
+    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <style>
-        body {
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #172554);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #e2e8f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .skill-tag {
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: #38bdf8;
-            transition: all 0.3s ease;
-        }
-        .skill-tag:hover {
-            background: rgba(56, 189, 248, 0.2);
-            transform: scale(1.05);
-        }
-    </style>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="antialiased selection:bg-sky-500 selection:text-white">
 
@@ -70,23 +28,26 @@
             <div class="text-xl md:text-2xl text-slate-300 h-10">
                 <span id="typed-text"></span>
             </div>
-            <div class="mt-8 flex gap-4 justify-center">
+            <div class="mt-8 flex flex-wrap gap-4 justify-center">
                 <a href="#about" class="px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-sky-500/50">
-                    Discover More
+                    <i class="fa-solid fa-user mr-2"></i>About Me
                 </a>
-                <a href="mailto:amanna@qti.qualcomm.com" class="px-6 py-3 bg-transparent border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-300">
+                <a href="#oss" class="px-6 py-3 bg-transparent border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-300">
+                    <i class="fa-solid fa-code-branch mr-2"></i>OSS Contributions
+                </a>
+                <a href="#contact" class="px-6 py-3 bg-transparent border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-300">
                     <i class="fa-solid fa-envelope mr-2"></i>Contact Me
                 </a>
             </div>
         </div>
-        <div class="absolute bottom-10 animate-bounce cursor-pointer">
+        <div class="absolute bottom-10 animate-bounce cursor-pointer z-10">
             <a href="#about" class="text-sky-400 text-3xl"><i class="fa-solid fa-chevron-down"></i></a>
         </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center reveal"><span class="text-sky-500">01.</span> About Me</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center reveal"><span class="text-sky-500">About</span> Me</h2>
         
         <div class="grid md:grid-cols-2 gap-10">
             <div class="glass-card p-8 reveal">
@@ -111,7 +72,10 @@
                     <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Cybersecurity</span>
                     <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">System Architecture</span>
                     <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">C / C++</span>
+                    <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Yocto</span>
                     <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Scripting</span>
+                    <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                    <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">AI & ML</span>
                     <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Access Control</span>
                     <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Vulnerability Analysis</span>
                 </div>
@@ -119,41 +83,171 @@
         </div>
     </section>
 
+    <!-- Open Source Contributions Section -->
+    <section id="oss" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center reveal"><span class="text-sky-500">Open Source</span> Contributions</h2>
+        
+        <div class="glass-card p-8 reveal">
+            <p class="text-slate-300 leading-relaxed mb-8 text-center">
+                A collection of my recent pull requests and mailing list patches across various open-source projects.
+            </p>
+            
+            <div class="space-y-4">
+                <!-- PR 1 -->
+                <a href="https://github.com/qualcomm-linux/meta-qcom/pull/1214" target="_blank" class="contribution-link block p-5 rounded-lg bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1"><i class="fa-brands fa-github mr-2"></i>meta-qcom PR #1214</h4>
+                        <span class="text-sm text-slate-400"><i class="fa-solid fa-book-bookmark mr-1"></i>qualcomm-linux / meta-qcom</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded-full border border-blue-700/50 whitespace-nowrap">GitHub PR</span>
+                </a>
+
+                <!-- PR 2 -->
+                <a href="https://github.com/qualcomm-linux/meta-qcom/pull/1223" target="_blank" class="contribution-link block p-5 rounded-lg bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1"><i class="fa-brands fa-github mr-2"></i>meta-qcom PR #1223</h4>
+                        <span class="text-sm text-slate-400"><i class="fa-solid fa-book-bookmark mr-1"></i>qualcomm-linux / meta-qcom</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded-full border border-blue-700/50 whitespace-nowrap">GitHub PR</span>
+                </a>
+
+                <!-- PR 3 -->
+                <a href="https://github.com/SELinuxProject/refpolicy/pull/1095" target="_blank" class="contribution-link block p-5 rounded-lg bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1"><i class="fa-brands fa-github mr-2"></i>refpolicy PR #1095</h4>
+                        <span class="text-sm text-slate-400"><i class="fa-solid fa-book-bookmark mr-1"></i>SELinuxProject / refpolicy</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded-full border border-blue-700/50 whitespace-nowrap">GitHub PR</span>
+                </a>
+
+                <!-- PR 4 -->
+                <a href="https://github.com/SELinuxProject/refpolicy/pull/1096" target="_blank" class="contribution-link block p-5 rounded-lg bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1"><i class="fa-brands fa-github mr-2"></i>refpolicy PR #1096</h4>
+                        <span class="text-sm text-slate-400"><i class="fa-solid fa-book-bookmark mr-1"></i>SELinuxProject / refpolicy</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded-full border border-blue-700/50 whitespace-nowrap">GitHub PR</span>
+                </a>
+
+                <!-- PR 5 -->
+                <a href="https://github.com/openembedded/meta-openembedded/pull/1034" target="_blank" class="contribution-link block p-5 rounded-lg bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1"><i class="fa-brands fa-github mr-2"></i>meta-openembedded PR #1034</h4>
+                        <span class="text-sm text-slate-400"><i class="fa-solid fa-book-bookmark mr-1"></i>openembedded / meta-openembedded</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded-full border border-blue-700/50 whitespace-nowrap">GitHub PR</span>
+                </a>
+
+                <!-- Mailing List Patch -->
+                <a href="https://lists.yoctoproject.org/g/yocto-patches/message/3567" target="_blank" class="contribution-link block p-5 rounded-lg bg-slate-800/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-l-4 border-l-orange-500">
+                    <div>
+                        <h4 class="text-lg font-semibold text-sky-300 mb-1"><i class="fa-solid fa-envelope-open-text mr-2"></i>Yocto Patches Mailing List #3567</h4>
+                        <span class="text-sm text-slate-400"><i class="fa-solid fa-users mr-1"></i>yocto-patches</span>
+                    </div>
+                    <span class="px-3 py-1 bg-orange-900/50 text-orange-300 text-xs rounded-full border border-orange-700/50 whitespace-nowrap">Mailing List</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact section -->
+    <section id="contact" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center reveal">
+            <span class="text-sky-500">Get in</span> Touch
+        </h2>
+    
+        <div class="glass-card p-8 reveal">
+            <p class="text-slate-300 leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+                Whether you have a question, a project idea, or just want to connect, feel free to reach out through any of
+                the platforms below!
+            </p>
+    
+            <!-- Contact Links -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+    
+                <!-- Email -->
+                <a href="mailto:amanna@qti.qualcomm.com"
+                    class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-sky-500 text-slate-300 hover:text-sky-400 transition-colors duration-300">
+                    <i class="fa-solid fa-envelope text-xl"></i>
+                    <span class="font-medium">Email</span>
+                </a>
+    
+                <!-- Mobile -->
+                <a href="tel:+1234567890"
+                    class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-sky-500 text-slate-300 hover:text-sky-400 transition-colors duration-300">
+                    <i class="fa-solid fa-phone text-xl"></i>
+                    <span class="font-medium">Mobile</span>
+                </a>
+    
+                <!-- WhatsApp -->
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-green-500 text-slate-300 hover:text-green-400 transition-colors duration-300">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span class="font-medium">WhatsApp</span>
+                </a>
+
+                <!-- Linkedin -->
+                <a href="https://www.linkedin.com/in/abhilash-manna-184338222/" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-blue-400 transition-colors duration-300">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                    <span class="font-medium">Linkedin</span>
+                </a>
+
+                <!-- Github -->
+                <a href="https://github.com/abhilash-manna" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-blue-400 transition-colors duration-300">
+                    <i class="fa-brands fa-github text-xl"></i>
+                    <span class="font-medium">GitHub</span>
+                </a>
+
+                <!-- Github -->
+                <a href="" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-location-dot text-xl"></i>
+                    <span class="font-medium">India</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center reveal">
+            <span class="text-sky-500">My</span> Resume
+        </h2>
+    
+        <div class="glass-card p-8 md:p-12 reveal text-center max-w-3xl mx-auto">
+            <!-- Optional decorative icon -->
+            <i class="fa-regular fa-file-pdf text-5xl text-sky-400 mb-6"></i>
+    
+            <h3 class="text-2xl font-semibold mb-4 text-slate-200">Interested in my full professional background?</h3>
+            <p class="text-slate-300 leading-relaxed mb-8">
+                Download my complete resume for a detailed overview of my experience in Linux Security, system architecture,
+                and my work at Qualcomm.
+            </p>
+    
+            <!-- Download Button -->
+            <a href="./assets/docs/" download="Abhilasha_Manna_Resume.pdf"
+                class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-900 font-bold transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-sky-500/25">
+                <i class="fa-solid fa-cloud-arrow-down text-xl"></i>
+                <span>Download CV</span>
+            </a>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer class="py-8 text-center text-slate-500 border-t border-slate-800 mt-20">
         <p>&copy; 2024 Abhilasha Manna. Created for GitHub Pages.</p>
-        <div class="mt-4 flex justify-center gap-4">
+        <!-- <div class="mt-4 flex justify-center gap-4">
             <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
             <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
-        </div>
+        </div> -->
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Typing Effect
-        var typed = new Typed('#typed-text', {
-            strings: ['Engineer II @ Qualcomm', 'Linux Security Specialist', 'Tech Enthusiast', 'Problem Solver'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true,
-            backDelay: 1500
-        });
-
-        // Scroll Reveal Animation
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
-    </script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
