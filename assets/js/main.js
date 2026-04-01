@@ -110,17 +110,6 @@ function init() {
     }
 }
 
-// Handle window resizing and phone rotation
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    // Recalculate how many stars we need
-    setParticleCount();
-    
-    // Restart the animation with the new star count
-    init();
-});
 
 // Animation Loop
 function animate() {
@@ -169,11 +158,16 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// Handle browser resizing
+// Handle window resizing and phone rotation
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    init(); // Re-initialize to fill the new screen size
+    
+    // Recalculate how many stars we need
+    setParticleCount();
+    
+    // Restart the animation with the new star count
+    init();
 });
 
 // Start the animation
